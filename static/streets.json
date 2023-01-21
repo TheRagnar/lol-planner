@@ -1,52 +1,151 @@
 {
   "streets": [
     {
+      "id": 1111111111,
+      "name": "Стёрка"
+    },
+    {
+      "id": 0,
       "name": "Улица с востока на юго-запад",
-      "src": "eswstrt.0.0.mp.png"
+      "src": "eswstrt.0.6.mp.png"
     },
     {
+      "id": 1,
       "name": "Улица с востока на северо-запад",
-      "src": "enwstrt.0.0.mp.png"
+      "src": "enwstrt.0.6.mp.png"
     },
     {
+      "id": 2,
       "name": "Восточно-западная улица",
-      "src": "hstreet.0.0.mp.png"
+      "src": "hstreet.0.6.mp.png"
     },
     {
+      "id": 3,
       "name": "Улица с севера на юго-восток",
-      "src": "nsestrt.0.0.mp.png"
+      "src": "nsestrt.0.6.mp.png"
     },
     {
+      "id": 4,
       "name": "Улица с севера на юго-восток",
-      "src": "nswstrt.0.0.mp.png"
+      "src": "nswstrt.0.6.mp.png"
     },
     {
+      "id": 5,
       "name": "Улица с северо-запада на юго-восток",
-      "src": "orstreet.0.0.mp.png"
+      "src": "orstreet.0.6.mp.png"
     },
     {
+      "id": 6,
       "name": "Улица с северо-востока на юго-запад",
-      "src": "ostreet.0.0.mp.png"
+      "src": "ostreet.0.6.mp.png"
     },
     {
+      "id": 7,
       "name": "Улица с юга на северо-восток",
-      "src": "snestrt.0.0.mp.png"
+      "src": "snestrt.0.6.mp.png"
     },
     {
+      "id": 8,
       "name": "Улица с юга на северо-запад",
-      "src": "snwstrt.0.0.mp.png"
+      "src": "snwstrt.0.6.mp.png"
     },
     {
+      "id": 9,
       "name": "Северо-южная улица",
-      "src": "vstreet.0.0.mp.png"
+      "src": "vstreet.0.6.mp.png"
     },
     {
+      "id": 10,
       "name": "Улица с запада на северо-восток",
-      "src": "wnestrt.0.0.mp.png"
+      "src": "wnestrt.0.6.mp.png"
     },
     {
+      "id": 11,
       "name": "Улица с запада на юго-восток",
-      "src": "wsestrt.0.0.mp.png"
+      "src": "wsestrt.0.6.mp.png"
+    },
+    {
+      "id": 12,
+      "name": "Перекресток",
+      "src": "crossing.0.6.mp.png"
+    },
+    {
+      "id": 13,
+      "name": "Диагональный перекресток",
+      "src": "xcross.0.6.mp.png"
+    },
+    {
+      "id": 14,
+      "name": "Жилая зона",
+      "src": "house.0.6.mp.png"
+    },
+    {
+      "id": 15,
+      "name": "Южные ворота",
+      "src": "sgate.0.2.mp.png"
+    },
+    {
+      "id": 16,
+      "name": "Юго-западные ворота",
+      "src": "swgate.0.2.mp.png"
+    },
+    {
+      "id": 17,
+      "name": "Западные ворота",
+      "src": "wgate.0.2.mp.png"
+    },
+    {
+      "id": 18,
+      "name": "Юго-восточные ворота",
+      "src": "segate.0.2.mp.png"
+    },
+
+    {
+      "id": 19,
+      "name": "Восточные ворота",
+      "src": "egate.0.2.mp.png"
+    },
+    {
+      "id": 20,
+      "name": "Северо-восточные ворота",
+      "src": "negate.0.2.mp.png"
+    },
+    {
+      "id": 21,
+      "name": "Северные ворота",
+      "src": "ngate.0.2.mp.png"
+    },
+
+    {
+      "id": 22,
+      "name": "Северо-западные ворота",
+      "src": "nwgate.0.2.mp.png"
+    },
+
+    {
+      "id": 23,
+      "name": "Южная стена",
+      "src": "swall.0.2.mp.png"
+    },
+    {
+      "id": 24,
+      "name": "Западная стена",
+      "src": "wwall.0.2.mp.png"
+    },
+    {
+      "id": 25,
+      "name": "Восточная стена",
+      "src": "ewall.0.2.mp.png"
+    },
+    {
+      "id": 26,
+      "name": "Северная стена",
+      "src": "nwall.0.2.mp.png"
+    },
+    {
+      "id": 27,
+      "name": "Башня",
+      "src": "tower.0.2.mp.png"
     }
   ]
 }
