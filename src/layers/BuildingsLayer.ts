@@ -1,9 +1,9 @@
 import { SIDEBAR_WIDTH } from "./../lib/app";
-import { bld } from "./../../static/data/bld/index";
+import { bld } from "../data/bld";
 import { Container, Graphics, Sprite, Text, TextStyle } from "pixi.js";
 import { APP_HEIGHT } from "../lib/app";
 import { COLORS } from "../lib/colors";
-import { IBld, IBldCat } from "../../static/data/bld/types";
+import { IBld, IBldCat } from "../data/bld/types";
 
 const BUILDINGS_LAYER_WIDTH = SIDEBAR_WIDTH - 20;
 const BUILDINGS_LAYER_HEIGHT = APP_HEIGHT - 222;

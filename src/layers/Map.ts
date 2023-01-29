@@ -1,5 +1,3 @@
-import { IBld } from "./../../static/data/bld/types";
-import { bld } from "./../../static/data/bld/index";
 import {
   Container,
   FederatedPointerEvent,
@@ -9,6 +7,8 @@ import {
   Text,
   TextStyle,
 } from "pixi.js";
+import { bld } from "../data/bld";
+import { IBld } from "../data/bld/types";
 import { MAP_HEIGHT, MAP_WIDTH } from "../lib/app";
 import { GRID_SIZE } from "../lib/grid";
 
