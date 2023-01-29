@@ -1,3 +1,5 @@
+import { IBld } from "./../../static/data/bld/types";
+import { bld } from "./../../static/data/bld/index";
 import {
   Container,
   FederatedPointerEvent,
@@ -7,7 +9,6 @@ import {
   Text,
   TextStyle,
 } from "pixi.js";
-import { streets } from "../../static/streets.json";
 import { MAP_HEIGHT, MAP_WIDTH } from "../lib/app";
 import { GRID_SIZE } from "../lib/grid";
 
@@ -15,7 +16,7 @@ export class MapLayer extends Container {
   private readonly screenWidth: number;
   private readonly screenHeight: number;
 
-  private bg: Sprite = Sprite.from("assets/bg/full.jpg");
+  private bg: Sprite = Sprite.from("assets/bg/one/full.jpg");
   private bgEnabled: boolean = true;
 
   private dragging: boolean = false;
@@ -63,16 +64,26 @@ export class MapLayer extends Container {
     this.cols.forEach((col) => {
       col.on("pointertap", (event: FederatedPointerEvent) => {
         if (event.button !== 0) return;
+
         // @ts-ignore: Unreachable code error
-        const id: number = this.parent?.selectBuildId;
-        if (id === 1111111111) {
+        const isErase: boolean = this.parent?.eraser?.isAct;
+        if (isErase) {
           col.removeSprite();
           return;
         }
-        const src = streets.find((item) => item.id === id)?.src;
-        if (src) {
-          col.setSprite("assets/buildings/streets/" + src);
-        }
+
+        // @ts-ignore: Unreachable code error
+        const id: string = this.parent?.sidebar?.buildingsLayer?.buildId;
+        if (!id) return;
+
+        const build = bld.findBuildById(id);
+        if (!build) return;
+
+        // if (id === 1111111111) {
+        //   col.removeSprite();
+        //   return;
+        // }
+        col.setBuild(build);
       });
     });
   }
@@ -158,11 +169,15 @@ class Col extends Container {
     this.removeChild(this.coords);
   }
 
-  public setSprite(src: string) {
+  public setBuild(bld: IBld) {
     this.removeChildren();
 
-    this.sprite = Sprite.from(src);
-    this.sprite.anchor.set(0.25);
+    this.sprite = Sprite.from(bld.tiles[0]);
+    if (bld?.archon) {
+      this.sprite.anchor.set(bld.archon[0], bld.archon[1]);
+    } else {
+      this.sprite.anchor.set(0.25);
+    }
     this.addChild(this.border);
     this.addChild(this.coords);
     this.addChild(this.sprite);

@@ -1,32 +1,24 @@
 import { Container } from "pixi.js";
-import { RightSidebar } from "../layers/RightSidebar";
+import { EraserLayer } from "../layers/EraserLayer";
 import { MapLayer } from "../layers/Map";
-// import { Menu } from "./Menu";
+import { Sidebar } from "../layers/Sidebar";
 
 export class MainScene extends Container {
   private map: MapLayer = new MapLayer(640 * 5, 640 * 3);
-  // private menu: Menu = new Menu();
-  private sidebar: RightSidebar = new RightSidebar();
-
-  private selectBuildId?: number;
+  public sidebar: Sidebar = new Sidebar();
+  public eraser: EraserLayer = new EraserLayer();
 
   constructor() {
     super();
 
     this.addChild(this.map);
-    // this.addChild(this.menu);
     this.addChild(this.sidebar);
+    this.addChild(this.eraser);
 
     this.handleEvents();
   }
 
   private handleEvents() {
-    // @ts-ignore: Unreachable code error
-    this.sidebar.on("onSelectBuilding", (id: number) => {
-      this.selectBuildId = id;
-      console.log(this.selectBuildId);
-    });
-
     // @ts-ignore: Unreachable code error
     this.map.on("updateArea", ({ x, y }: { x: number; y: number }) => {
       this.sidebar.minimap.map.updateArea({ x, y });

@@ -1,8 +1,9 @@
 import { COLORS } from "./../lib/colors";
 import { Container, FederatedPointerEvent, Graphics, Sprite } from "pixi.js";
+import { MAP_HEIGHT, MAP_WIDTH, SIDEBAR_WIDTH } from "../lib/app";
 
 export class Minimap extends Container {
-  public map: MapView = new MapView();
+  public map: MapView = new MapView(SIDEBAR_WIDTH / 2 - 160, 0);
   public background: Graphics = new Graphics();
 
   constructor(x: number, y: number) {
@@ -17,14 +18,14 @@ export class Minimap extends Container {
 
   private drawBackground() {
     this.background.beginFill(COLORS.BLACK);
-    this.background.drawRect(0, 0, 320, 320);
+    this.background.drawRect(0, 0, SIDEBAR_WIDTH - 20, 192);
     this.background.endFill();
     this.addChild(this.background);
   }
 }
 
 class MapView extends Container {
-  private map: Sprite = Sprite.from("assets/bg/full.jpg");
+  private map: Sprite = Sprite.from("assets/bg/one/full.jpg");
   private area: Graphics = new Graphics();
 
   private drag: boolean = false;
@@ -34,9 +35,10 @@ class MapView extends Container {
     y: 0,
   };
 
-  constructor() {
+  constructor(x: number, y: number) {
     super();
-    this.drawMap();
+
+    this.drawMap(x, y);
     this.drawArea();
     this.handleEvents();
   }
@@ -95,7 +97,7 @@ class MapView extends Container {
     this.emit("updateMap", { x: x * 10, y: y * 10 });
   }
 
-  private drawMap(x: number = 0, y: number = 64) {
+  private drawMap(x: number = 0, y: number = 0) {
     const width = 320;
     const height = 192;
 
@@ -109,8 +111,8 @@ class MapView extends Container {
   }
 
   private drawArea() {
-    const width = 94;
-    const height = 96;
+    const width = MAP_WIDTH / 10;
+    const height = MAP_HEIGHT / 10;
 
     this.area = new Graphics();
     this.area.zIndex = 100;
